@@ -1,0 +1,19 @@
+{
+  "name": "pokebot",
+  "version": "1.0.0",
+  "description": "pokemon shiny bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
+  },
+  "author": "Anne",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "mysql": "^2.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
