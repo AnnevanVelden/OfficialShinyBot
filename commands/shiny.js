@@ -58,44 +58,8 @@ module.exports.run = async (bot, message, args, prefix) => {
 		// put the lowercase value behind an url to make a link
 		var serebiiLink = 'https://www.serebii.net/pokemon/' + serebiiLowercase;
 
-		// if the id is bigger than or equal to 810 or equal to the number below run this part of code
-		// this is hella long but the pictures of these pokemon will be a better quality bc of the
-		// link in serebii
-		if (rows[0].galar == 1) {
-			// put the id of the pokemon behind this url to generate the link to the picture
-			var normalImageLink = 'https://www.serebii.net/swordshield/pokemon/' + rows[0].id + '.png';
-			// same here but this is the picture for the shiny version
-			var shinyImageLink = 'https://www.serebii.net/Shiny/SWSH/' + rows[0].id + '.png';
-
-			// if the id is lower or equal to 9 put two 0's before it -> 1 will turn into 001
-			if (rows[0].id <= 9) {
-				var idLowest = '00' + rows[0].id;
-				// generate these links instead (this will override the value it was givven above)
-				var normalImageLink = 'https://www.serebii.net/swordshield/pokemon/' + idLowest + '.png';
-				var shinyImageLink = 'https://www.serebii.net/Shiny/SWSH/' + idLowest + '.png';
-				// if the id is higher than 9 and lower than 100 put one 0 before it -> 50 becomes 050
-			} else if (rows[0].id > 9 && rows[0].id < 100) {
-				var idLow = '0' + rows[0].id;
-				// generate the links again, this will override the values above
-				var normalImageLink = 'https://www.serebii.net/swordshield/pokemon/' + idLow + '.png';
-				var shinyImageLink = 'https://www.serebii.net/Shiny/SWSH/' + idLow + '.png';
-			}
-		} else {
-			// this is the same as above but for the left over id numbers, these id values will link to a
-			// lower value image on the serebii site
-			var normalImageLink = 'https://www.serebii.net/sunmoon/pokemon/' + rows[0].id + '.png';
-			var shinyImageLink = 'https://www.serebii.net/Shiny/SM/' + rows[0].id + '.png';
-
-			if (rows[0].id <= 9) {
-				var idLowest = '00' + rows[0].id;
-				var normalImageLink = 'https://www.serebii.net/sunmoon/pokemon/' + idLowest + '.png';
-				var shinyImageLink = 'https://www.serebii.net/Shiny/SM/' + idLowest + '.png';
-			} else if (rows[0].id > 9 && rows[0].id < 100) {
-				var idLow = '0' + rows[0].id;
-				var normalImageLink = 'https://www.serebii.net/sunmoon/pokemon/' + idLow + '.png';
-				var shinyImageLink = 'https://www.serebii.net/Shiny/SM/' + idLow + '.png';
-			}
-		}
+		var shinyImageLink = 'http://www.anneinthemaking.nl/sprites/shiny/' + rows[0].id + '.gif';
+		var normalImageLink = 'http://www.anneinthemaking.nl/sprites/regular/' + rows[0].id + '.gif';
 
 		// generate the first rich embed
 		const botEmbed1 = new discord.RichEmbed()
@@ -111,6 +75,10 @@ module.exports.run = async (bot, message, args, prefix) => {
 			.addField(
 				`In case of an error: ${prefix}error`,
 				`If there is an error please use this command and explain what is wrong. Example: ${prefix}error <explanation>`
+			)
+			.addField(
+				`Image credit:`,
+				`https://www.pkparaiso.com/, https://twitter.com/tilabletoast and https://projectpokemon.org/`
 			);
 		// send the message
 		message.channel.send(botEmbed1);

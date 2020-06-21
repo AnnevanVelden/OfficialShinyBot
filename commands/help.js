@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args, prefix) => {
 		.addField(prefix + 'random', 'Get a random pokémon')
 		.addField(
 			prefix + 'random <region>',
-			'Get a random pokémon from the requested regional pokédex. The available commands are: kanto, johto, hoenn, hoenn-oras, sinnoh, sinnoh-plat, unova, unova-b2w2, kalos, alola, alola-usum and galar'
+			'Get a random pokémon from the requested regional pokédex. The available commands are: kanto, johto, hoenn, hoenn-oras, sinnoh, sinnoh-plat, unova, unova-b2w2, kalos, alola, alola-usum, galar and galar-dlc (the galar-dlc command will include main game mons)'
 		)
 		.addField(prefix + 'random <type>', 'Get a random pokémon with the type requested')
 		.addField(
@@ -25,7 +25,7 @@ module.exports.run = async (bot, message, args, prefix) => {
 		)
 		.addField(
 			prefix + 'shiny <pokémon> or ' + prefix + 'shiny <national pokédex number>',
-			"Get some info relevant to shiny hunting of a specific pokémon. WARNING: IF THE MON HAS A SPACE IN THE NAME DON'T PUT IT IN THERE (for instance: Type: Null would be Type:Null). Also, Nidoran is NidoranF and NidoranM."
+			"Get some info relevant to shiny hunting of a specific pokémon. WARNING: IF THE MON HAS A SPACE IN THE NAME DON'T PUT IT IN THERE (for instance: Type Null would be TypeNull). Also, Nidoran is NidoranF and NidoranM."
 		)
 		.addField(prefix + 'error <explanation>', 'Report an error in the bot.');
 	// send the message
