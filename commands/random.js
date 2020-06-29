@@ -608,21 +608,23 @@ module.exports.run = async (bot, message, args, prefix) => {
 				// put the lowercase value behind an url to make a link
 				var serebiiLink = 'https://www.serebii.net/pokemon/' + serebiiLowercase;
 
-
+				var bulbaLink = 'https://bulbapedia.bulbagarden.net/wiki/' + rows[0].name + '_(Pok%C3%A9mon)';
+				
 				var shinyImageLink = 'http://www.anneinthemaking.nl/sprites/shiny/' + rows[0].id + '.gif';
 				var normalImageLink = 'http://www.anneinthemaking.nl/sprites/regular/' + rows[0].id + '.gif';
-
 
 				// generate the first rich embed
 				const botEmbed1 = new discord.RichEmbed()
 					// set the color to yellow
 					.setColor('#ffd117')
 					// the title of the message is the name of the pokemon, this info is from the database
+					.addField('National dex number', rows[0].id)
 					.setTitle(rows[0].name)
 					// the egg cycle is put here, also info from the database
 					.addField('Egg cycle', rows[0].cycle)
 					// give the generated link from waaay above in the code
 					.addField('Serebii link', serebiiLink)
+					.addField('Bulbapedia link', bulbaLink)
 					// if error
 					.addField(
 						`In case of an error: ${prefix}error`,
