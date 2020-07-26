@@ -25,11 +25,23 @@ module.exports.run = async (bot, message, args, prefix) => {
 		)
 		.addField(
 			prefix + 'shiny <pokémon> or ' + prefix + 'shiny <national pokédex number>',
-			"Get some info relevant to shiny hunting of a specific pokémon. WARNING: IF THE MON HAS A SPACE IN THE NAME DON'T PUT IT IN THERE (for instance: Type Null would be TypeNull). Also, Nidoran is NidoranF and NidoranM."
+			"Get some info relevant to shiny hunting of a specific pokémon. WARNING: IF THE MON HAS A SPACE IN THE NAME DON'T PUT IT IN THERE (for instance: Type Null would be TypeNull). \nAlso, Nidoran is NidoranF and NidoranM and Urshifu is UrshifuRS or UrshifuSS."
 		)
 		.addField(
-			prefix + 'mega <pokémon> or ' + prefix + 'mega <national pokédex number>',
-			"Get the mega version of a pokémon if it exists. WARNING: CHARIZARD AND MEWTWO HAVE AN X AND Y VERSION SO FOR THOSE TWO YOU WILL HAVE TO PUT X OR Y BEHIND THE NAME. (For example: mewtwoy \nFor a random mega use -mega random)"
+			prefix + 'mega random, ' + prefix + 'mega <pokémon> or ' + prefix + 'mega <national pokédex number>',
+			"Get the mega version of a pokémon if it exists. WARNING: CHARIZARD AND MEWTWO HAVE AN X AND Y VERSION SO FOR THOSE TWO YOU WILL HAVE TO PUT X OR Y BEHIND THE NAME. (For example: MewtwoY or CharizardY). \nFor a random mega use -mega random"
+		)
+		.addField(
+			prefix + 'galarian random, ' + prefix + 'galarian <pokémon> or ' + prefix + 'galarian <national pokédex number>',
+			"Get the Galarian version of a pokémon if it exists."
+		)
+		.addField(
+			prefix + 'alolan random, ' + prefix + 'alolan <pokémon> or ' + prefix + 'alolan <national pokédex number>',
+			"Get the Alolan version of a pokémon if it exists."
+		)
+		.addField(
+			prefix + 'gigamax random, ' + prefix + 'gigamax <pokémon> or ' + prefix + 'gigamax <national pokédex number>',
+			"Get the gigantamax version of a pokémon if it exists. WARNING: URSHIFU HAS TWO DIFFERENT FORMS SO FORE THOSE YOU WILL HAVE TO PUT IN SS OR SR BEHIND THE NAME. (For example UrshifuRS or UrshifuSS)."
 		)
 		.addField(prefix + 'invite', 'Get an invite link so you can invite the bot to your own server.')
 		.addField(prefix + 'error <explanation>', 'Report an error in the bot.')
