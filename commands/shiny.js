@@ -35,7 +35,7 @@ module.exports.run = async (bot, message, args, prefix) => {
 
 				// do a quick query, select everything from the table named pokemon where the id is the same as the
 				// number
-				con.query(`SELECT * FROM pokemon WHERE id = ?`, [pokemonName], function (err, rows) {
+				con.query(`SELECT * FROM pokemon WHERE dex = ?`, [pokemonName], function (err, rows) {
 					// if there is a error, throw it my way
 					if (err) {
 						throw err;
@@ -60,15 +60,16 @@ module.exports.run = async (bot, message, args, prefix) => {
 
 		var bulbaLink = 'https://bulbapedia.bulbagarden.net/wiki/' + rows[0].name + '_(Pok%C3%A9mon)';
 
-		var shinyImageLink = 'http://www.anneinthemaking.nl/sprites/shiny/' + rows[0].id + '.gif';
-		var normalImageLink = 'http://www.anneinthemaking.nl/sprites/regular/' + rows[0].id + '.gif';
+		var shinyImageLink = 'https://shinybot.dev/public/sprites/shiny/' + rows[0].dex + '.gif';
+		var normalImageLink = 'https://shinybot.dev/public/sprites/regular/' + rows[0].dex + '.gif';
 
 		// generate the first rich embed
 		const botEmbed1 = new discord.RichEmbed()
 			// set the color to yellow
 			.setColor('#ffd117')
 			// the title of the message is the name of the pokemon, this info is from the database
-			.addField('National dex number', rows[0].id)
+			.addField('website', 'https://www.shinybot.dev')
+			.addField('National dex number', rows[0].dex)
 			.setTitle(rows[0].name)
 			// the egg cycle is put here, also info from the database
 			.addField('Egg cycle', rows[0].cycle)

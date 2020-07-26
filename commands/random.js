@@ -21,372 +21,160 @@ module.exports.run = async (bot, message, args, prefix) => {
 	if (arg.length == 3) {
 		switch (argument) {
 			case 'kanto':
-				var rand = Math.round(Math.random());
-				if (rand == 0) {
-					con.query(`SELECT * FROM pokemon WHERE kanto = ? AND type1 = ?`, [1, type], function (err, rows) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
+				con.query(`SELECT * FROM pokemon WHERE kanto = ? AND type1 = ? UNION SELECT * FROM pokemon WHERE kanto = ? AND type2 = ?`, [1, type, 1, type], function (err, rows) {
+					// if there is a error, throw it my way
+					if (err) {
+						throw err;
+					}
+					var pokemon = rows[Math.floor(Math.random() * rows.length)];
+					var pokemonid = pokemon.dex;
 
-						lookUp(pokemonid);
-					});
-				} else if (rand == 1) {
-					con.query(`SELECT * FROM pokemon WHERE kanto = ? AND type2 = ?`, [1, type], function (err, rows) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
-
-						lookUp(pokemonid);
-					});
-				}
+					lookUp(pokemonid);
+				});
 				break;
 			case 'johto':
-				var rand = Math.round(Math.random());
-				if (rand == 0) {
-					con.query(`SELECT * FROM pokemon WHERE johto = ? AND type1 = ?`, [1, type], function (err, rows) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
+				con.query(`SELECT * FROM pokemon WHERE johto = ? AND type1 = ? UNION SELECT * FROM pokemon WHERE johto = ? AND type2 = ?`, [1, type, 1, type], function (err, rows) {
+					// if there is a error, throw it my way
+					if (err) {
+						throw err;
+					}
+					var pokemon = rows[Math.floor(Math.random() * rows.length)];
+					var pokemonid = pokemon.dex
 
-						lookUp(pokemonid);
-					});
-				} else if (rand == 1) {
-					con.query(`SELECT * FROM pokemon WHERE johto = ? AND type2 = ?`, [1, type], function (err, rows) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
-
-						lookUp(pokemonid);
-					});
-				}
+					lookUp(pokemonid);
+				});
 				break;
 			case 'hoenn':
-				var rand = Math.round(Math.random());
-				if (rand == 0) {
-					con.query(`SELECT * FROM pokemon WHERE hoenn = ? AND type1 = ?`, [1, type], function (err, rows) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
+				con.query(`SELECT * FROM pokemon WHERE hoenn = ? AND type1 = ? UNION SELECT * FROM pokemon WHERE hoenn = ? AND type2 = ?`, [1, type, 1, type], function (err, rows) {
+					// if there is a error, throw it my way
+					if (err) {
+						throw err;
+					}
+					var pokemon = rows[Math.floor(Math.random() * rows.length)];
+					var pokemonid = pokemon.dex;
 
-						lookUp(pokemonid);
-					});
-				} else if (rand == 1) {
-					con.query(`SELECT * FROM pokemon WHERE hoenn = ? AND type2 = ?`, [1, type], function (err, rows) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
-
-						lookUp(pokemonid);
-					});
-				}
+					lookUp(pokemonid);
+				});
 				break;
 			case 'hoenn-oras':
-				var rand = Math.round(Math.random());
-				if (rand == 0) {
-					con.query(`SELECT * FROM pokemon WHERE hoenoras = ? AND type1 = ?`, [1, type], function (
-						err,
-						rows
-					) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
+				con.query(`SELECT * FROM pokemon WHERE hoennoras = ? AND type1 = ? UNION SELECT * FROM pokemon WHERE hoennoras = ? AND type2 = ?`, [1, type, 1, type], function (err, rows) {
+					// if there is a error, throw it my way
+					if (err) {
+						throw err;
+					}
+					var pokemon = rows[Math.floor(Math.random() * rows.length)];
+					var pokemonid = pokemon.dex;
 
-						lookUp(pokemonid);
-					});
-				} else if (rand == 1) {
-					con.query(`SELECT * FROM pokemon WHERE hoenoras = ? AND type2 = ?`, [1, type], function (
-						err,
-						rows
-					) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
-
-						lookUp(pokemonid);
-					});
-				}
+					lookUp(pokemonid);
+				});
 				break;
 			case 'sinnoh':
-				var rand = Math.round(Math.random());
-				if (rand == 0) {
-					con.query(`SELECT * FROM pokemon WHERE sinnoh = ? AND type1 = ?`, [1, type], function (err, rows) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
+				con.query(`SELECT * FROM pokemon WHERE sinnoh = ? AND type1 = ? UNION SELECT * FROM pokemon WHERE sinnoh = ? AND type2 = ?`, [1, type, 1, type], function (err, rows) {
+					// if there is a error, throw it my way
+					if (err) {
+						throw err;
+					}
+					var pokemon = rows[Math.floor(Math.random() * rows.length)];
+					var pokemonid = pokemon.dex;
 
-						lookUp(pokemonid);
-					});
-				} else if (rand == 1) {
-					con.query(`SELECT * FROM pokemon WHERE sinnoh = ? AND type2 = ?`, [1, type], function (err, rows) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
-
-						lookUp(pokemonid);
-					});
-				}
+					lookUp(pokemonid);
+				});
 				break;
 			case 'sinnoh-plat':
-				var rand = Math.round(Math.random());
-				if (rand == 0) {
-					con.query(`SELECT * FROM pokemon WHERE sinnoplat = ? AND type1 = ?`, [1, type], function (
-						err,
-						rows
-					) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
+				con.query(`SELECT * FROM pokemon WHERE sinnohplat = ? AND type1 = ? UNION SELECT * FROM pokemon WHERE sinnohplat = ? AND type2 = ?`, [1, type, 1, type], function (err, rows) {
+					// if there is a error, throw it my way
+					if (err) {
+						throw err;
+					}
+					var pokemon = rows[Math.floor(Math.random() * rows.length)];
+					var pokemonid = pokemon.dex;
 
-						lookUp(pokemonid);
-					});
-				} else if (rand == 1) {
-					con.query(`SELECT * FROM pokemon WHERE sinnoplat = ? AND type2 = ?`, [1, type], function (
-						err,
-						rows
-					) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
-
-						lookUp(pokemonid);
-					});
-				}
+					lookUp(pokemonid);
+				});
 				break;
 			case 'unova':
-				var rand = Math.round(Math.random());
-				if (rand == 0) {
-					con.query(`SELECT * FROM pokemon WHERE unova = ? AND type1 = ?`, [1, type], function (err, rows) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
+				con.query(`SELECT * FROM pokemon WHERE unova = ? AND type1 = ? UNION SELECT * FROM pokemon WHERE unova = ? AND type2 = ?`, [1, type, 1, type], function (err, rows) {
+					// if there is a error, throw it my way
+					if (err) {
+						throw err;
+					}
+					var pokemon = rows[Math.floor(Math.random() * rows.length)];
+					var pokemonid = pokemon.dex;
 
-						lookUp(pokemonid);
-					});
-				} else if (rand == 1) {
-					con.query(`SELECT * FROM pokemon WHERE unova = ? AND type2 = ?`, [1, type], function (err, rows) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
-
-						lookUp(pokemonid);
-					});
-				}
+					lookUp(pokemonid);
+				});
 				break;
 			case 'unova-b2w2':
-				var rand = Math.round(Math.random());
-				if (rand == 0) {
-					con.query(`SELECT * FROM pokemon WHERE unovab2w2 = ? AND type1 = ?`, [1, type], function (
-						err,
-						rows
-					) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
+				con.query(`SELECT * FROM pokemon WHERE unovab2w2 = ? AND type1 = ? UNION SELECT * FROM pokemon WHERE unovab2w2 = ? AND type2 = ?`, [1, type, 1, type], function (err, rows) {
+					// if there is a error, throw it my way
+					if (err) {
+						throw err;
+					}
+					var pokemon = rows[Math.floor(Math.random() * rows.length)];
+					var pokemonid = pokemon.dex;
 
-						lookUp(pokemonid);
-					});
-				} else if (rand == 1) {
-					con.query(`SELECT * FROM pokemon WHERE unovab2w2 = ? AND type2 = ?`, [1, type], function (
-						err,
-						rows
-					) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
-
-						lookUp(pokemonid);
-					});
-				}
+					lookUp(pokemonid);
+				});
 				break;
 			case 'kalos':
-				var rand = Math.round(Math.random());
-				if (rand == 0) {
-					con.query(`SELECT * FROM pokemon WHERE kalos = ? AND type1 = ?`, [1, type], function (err, rows) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
+				con.query(`SELECT * FROM pokemon WHERE kalos = ? AND type1 = ? UNION SELECT * FROM pokemon WHERE kalos = ? AND type2 = ?`, [1, type, 1, type], function (err, rows) {
+					// if there is a error, throw it my way
+					if (err) {
+						throw err;
+					}
+					var pokemon = rows[Math.floor(Math.random() * rows.length)];
+					var pokemonid = pokemon.dex;
 
-						lookUp(pokemonid);
-					});
-				} else if (rand == 1) {
-					con.query(`SELECT * FROM pokemon WHERE kalos = ? AND type2 = ?`, [1, type], function (err, rows) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
-
-						lookUp(pokemonid);
-					});
-				}
+					lookUp(pokemonid);
+				});
 				break;
 			case 'alola':
-				var rand = Math.round(Math.random());
-				if (rand == 0) {
-					con.query(`SELECT * FROM pokemon WHERE alola = ? AND type1 = ?`, [1, type], function (err, rows) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
+				con.query(`SELECT * FROM pokemon WHERE alola = ? AND type1 = ? UNION SELECT * FROM pokemon WHERE alola = ? AND type2 = ?`, [1, type, 1, type], function (err, rows) {
+					// if there is a error, throw it my way
+					if (err) {
+						throw err;
+					}
+					var pokemon = rows[Math.floor(Math.random() * rows.length)];
+					var pokemonid = pokemon.dex;
 
-						lookUp(pokemonid);
-					});
-				} else if (rand == 1) {
-					con.query(`SELECT * FROM pokemon WHERE alola = ? AND type2 = ?`, [1, type], function (err, rows) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
-
-						lookUp(pokemonid);
-					});
-				}
+					lookUp(pokemonid);
+				});
 				break;
 			case 'alola-usum':
-				var rand = Math.round(Math.random());
-				if (rand == 0) {
-					con.query(`SELECT * FROM pokemon WHERE alolausum = ? AND type1 = ?`, [1, type], function (
-						err,
-						rows
-					) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
+				con.query(`SELECT * FROM pokemon WHERE alolausum = ? AND type1 = ? UNION SELECT * FROM pokemon WHERE alolausum = ? AND type2 = ?`, [1, type, 1, type], function (err, rows) {
+					// if there is a error, throw it my way
+					if (err) {
+						throw err;
+					}
+					var pokemon = rows[Math.floor(Math.random() * rows.length)];
+					var pokemonid = pokemon.dex;
 
-						lookUp(pokemonid);
-					});
-				} else if (rand == 1) {
-					con.query(`SELECT * FROM pokemon WHERE alolausum = ? AND type2 = ?`, [1, type], function (
-						err,
-						rows
-					) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
-
-						lookUp(pokemonid);
-					});
-				}
+					lookUp(pokemonid);
+				});
 				break;
 			case 'galar':
-				var rand = Math.round(Math.random());
-				if (rand == 0) {
-					con.query(`SELECT * FROM pokemon WHERE galar = ? AND type1 = ?`, [1, type], function (err, rows) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
+				con.query(`SELECT * FROM pokemon WHERE galar = ? AND type1 = ? UNION SELECT * FROM pokemon WHERE galar = ? AND type2 = ?`, [1, type, 1, type], function (err, rows) {
+					// if there is a error, throw it my way
+					if (err) {
+						throw err;
+					}
+					var pokemon = rows[Math.floor(Math.random() * rows.length)];
+					var pokemonid = pokemon.dex;
 
-						lookUp(pokemonid);
-					});
-				} else if (rand == 1) {
-					con.query(`SELECT * FROM pokemon WHERE galar = ? AND type2 = ?`, [1, type], function (err, rows) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
-
-						lookUp(pokemonid);
-					});
-				}
+					lookUp(pokemonid);
+				});
 				break;
 			case 'galar-dlc':
-				var rand = Math.round(Math.random());
-				if (rand == 0) {
-					con.query(`SELECT * FROM pokemon WHERE galardlc = ? AND type1 = ?`, [1, type], function (
-						err,
-						rows
-					) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
+				con.query(`SELECT * FROM pokemon WHERE galardlc = ? AND type1 = ? UNION SELECT * FROM pokemon WHERE galardlc = ? AND type2 = ?`, [1, type, 1, type], function (err, rows) {
+					// if there is a error, throw it my way
+					if (err) {
+						throw err;
+					}
+					var pokemon = rows[Math.floor(Math.random() * rows.length)];
+					var pokemonid = pokemon.dex;
 
-						lookUp(pokemonid);
-					});
-				} else if (rand == 1) {
-					con.query(`SELECT * FROM pokemon WHERE galardlc = ? AND type2 = ?`, [1, type], function (
-						err,
-						rows
-					) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
-
-						lookUp(pokemonid);
-					});
-				}
+					lookUp(pokemonid);
+				});
 				break;
 		}
 	} else if (arg.length == 2) {
@@ -399,7 +187,7 @@ module.exports.run = async (bot, message, args, prefix) => {
 					}
 
 					var pokemon = rows[Math.floor(Math.random() * rows.length)];
-					var pokemonid = pokemon.id;
+					var pokemonid = pokemon.dex;
 
 					lookUp(pokemonid);
 				});
@@ -412,7 +200,7 @@ module.exports.run = async (bot, message, args, prefix) => {
 					}
 
 					var pokemon = rows[Math.floor(Math.random() * rows.length)];
-					var pokemonid = pokemon.id;
+					var pokemonid = pokemon.dex;
 
 					lookUp(pokemonid);
 				});
@@ -425,7 +213,7 @@ module.exports.run = async (bot, message, args, prefix) => {
 					}
 
 					var pokemon = rows[Math.floor(Math.random() * rows.length)];
-					var pokemonid = pokemon.id;
+					var pokemonid = pokemon.dex;
 
 					lookUp(pokemonid);
 				});
@@ -438,7 +226,7 @@ module.exports.run = async (bot, message, args, prefix) => {
 					}
 
 					var pokemon = rows[Math.floor(Math.random() * rows.length)];
-					var pokemonid = pokemon.id;
+					var pokemonid = pokemon.dex;
 
 					lookUp(pokemonid);
 				});
@@ -451,7 +239,7 @@ module.exports.run = async (bot, message, args, prefix) => {
 					}
 
 					var pokemon = rows[Math.floor(Math.random() * rows.length)];
-					var pokemonid = pokemon.id;
+					var pokemonid = pokemon.dex;
 
 					lookUp(pokemonid);
 				});
@@ -464,7 +252,7 @@ module.exports.run = async (bot, message, args, prefix) => {
 					}
 
 					var pokemon = rows[Math.floor(Math.random() * rows.length)];
-					var pokemonid = pokemon.id;
+					var pokemonid = pokemon.dex;
 
 					lookUp(pokemonid);
 				});
@@ -477,7 +265,7 @@ module.exports.run = async (bot, message, args, prefix) => {
 					}
 
 					var pokemon = rows[Math.floor(Math.random() * rows.length)];
-					var pokemonid = pokemon.id;
+					var pokemonid = pokemon.dex;
 
 					lookUp(pokemonid);
 				});
@@ -490,7 +278,7 @@ module.exports.run = async (bot, message, args, prefix) => {
 					}
 
 					var pokemon = rows[Math.floor(Math.random() * rows.length)];
-					var pokemonid = pokemon.id;
+					var pokemonid = pokemon.dex;
 
 					lookUp(pokemonid);
 				});
@@ -503,7 +291,7 @@ module.exports.run = async (bot, message, args, prefix) => {
 					}
 
 					var pokemon = rows[Math.floor(Math.random() * rows.length)];
-					var pokemonid = pokemon.id;
+					var pokemonid = pokemon.dex;
 
 					lookUp(pokemonid);
 				});
@@ -516,7 +304,7 @@ module.exports.run = async (bot, message, args, prefix) => {
 					}
 
 					var pokemon = rows[Math.floor(Math.random() * rows.length)];
-					var pokemonid = pokemon.id;
+					var pokemonid = pokemon.dex;
 
 					lookUp(pokemonid);
 				});
@@ -529,7 +317,7 @@ module.exports.run = async (bot, message, args, prefix) => {
 					}
 
 					var pokemon = rows[Math.floor(Math.random() * rows.length)];
-					var pokemonid = pokemon.id;
+					var pokemonid = pokemon.dex;
 
 					lookUp(pokemonid);
 				});
@@ -542,7 +330,7 @@ module.exports.run = async (bot, message, args, prefix) => {
 					}
 
 					var pokemon = rows[Math.floor(Math.random() * rows.length)];
-					var pokemonid = pokemon.id;
+					var pokemonid = pokemon.dex;
 
 					lookUp(pokemonid);
 				});
@@ -555,40 +343,28 @@ module.exports.run = async (bot, message, args, prefix) => {
 					}
 
 					var pokemon = rows[Math.floor(Math.random() * rows.length)];
-					var pokemonid = pokemon.id;
+					var pokemonid = pokemon.dex;
 
 					lookUp(pokemonid);
 				});
 				break;
 			default:
-				var rand = Math.round(Math.random());
-				if (rand == 0) {
-					con.query(`SELECT * FROM pokemon WHERE type1 = ?`, argument, function (err, rows) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
 
-						lookUp(pokemonid);
-					});
-				} else if (rand == 1) {
-					con.query(`SELECT * FROM pokemon WHERE type2 = ?`, argument, function (err, rows) {
-						// if there is a error, throw it my way
-						if (err) {
-							throw err;
-						}
-						var pokemon = rows[Math.floor(Math.random() * rows.length)];
-						var pokemonid = pokemon.id;
+				con.query(`SELECT * FROM pokemon WHERE type1 = ? UNION SELECT * FROM pokemon WHERE type2 = ?`, [argument, argument], function (err, rows) {
+					// if there is a error, throw it my way
+					if (err) {
+						throw err;
+					}
+					var pokemon = rows[Math.floor(Math.random() * rows.length)];
+					var pokemonid = pokemon.dex;
 
-						lookUp(pokemonid);
-					});
-				}
+					lookUp(pokemonid);
+				});
+				break;
 		}
 	} else {
 		// generate a random number between 0 and 891 (so 1 to 890 can be picked)
-		var pokemonid = Math.floor(Math.random() * 891);
+		var pokemonid = Math.floor(Math.random() * 893);
 
 		lookUp(pokemonid);
 	}
@@ -609,16 +385,17 @@ module.exports.run = async (bot, message, args, prefix) => {
 				var serebiiLink = 'https://www.serebii.net/pokemon/' + serebiiLowercase;
 
 				var bulbaLink = 'https://bulbapedia.bulbagarden.net/wiki/' + rows[0].name + '_(Pok%C3%A9mon)';
-				
-				var shinyImageLink = 'http://www.anneinthemaking.nl/sprites/shiny/' + rows[0].id + '.gif';
-				var normalImageLink = 'http://www.anneinthemaking.nl/sprites/regular/' + rows[0].id + '.gif';
+
+				var shinyImageLink = 'https://shinybot.dev/public/sprites/shiny/' + rows[0].dex + '.gif';
+				var normalImageLink = 'https://shinybot.dev/public/sprites/regular/' + rows[0].dex + '.gif';
 
 				// generate the first rich embed
 				const botEmbed1 = new discord.RichEmbed()
 					// set the color to yellow
 					.setColor('#ffd117')
 					// the title of the message is the name of the pokemon, this info is from the database
-					.addField('National dex number', rows[0].id)
+					.addField('website', 'https://www.shinybot.dev')
+					.addField('National dex number', rows[0].dex)
 					.setTitle(rows[0].name)
 					// the egg cycle is put here, also info from the database
 					.addField('Egg cycle', rows[0].cycle)
