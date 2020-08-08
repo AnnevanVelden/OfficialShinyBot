@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args, prefix) => {
 	tag = message.member.user.tag;
 	content = message.content.slice(7);
 
-	goose = bot.users.get('265544259241771008');
+	goose = bot.users.get(botConfig.goose);
 
 	let d = new Date();
 	let options = {
