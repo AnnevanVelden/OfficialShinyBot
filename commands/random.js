@@ -389,6 +389,16 @@ module.exports.run = async (client, message, args, prefix) => {
                 var shinyImageLink = 'https://shinybot.dev/public/sprites/shiny/' + rows[0].dex + '.gif';
                 var normalImageLink = 'https://shinybot.dev/public/sprites/regular/' + rows[0].dex + '.gif';
 
+
+                var type1 = rows[0].type1;
+                var type2 = rows[0].type2;
+
+                if (type1 === type2){
+                    var types = type1;
+                } else {
+                    var types = type1 + '/' + type2;
+                }
+
                 // generate the first rich embed
                 const botEmbed1 = new discord.MessageEmbed()
                     // set the color to yellow
@@ -420,6 +430,7 @@ module.exports.run = async (client, message, args, prefix) => {
                     .setColor('#ffd117')
                     // the title is Normal <pokemon name>
                     .setTitle('Normal ' + rows[0].name)
+                    .addField('Type', types)
                     // give the link we generated for the normal image
                     .setImage(normalImageLink);
                 // send the message
@@ -431,6 +442,7 @@ module.exports.run = async (client, message, args, prefix) => {
                     .setColor('#ffd117')
                     // the title is Shiny <pokemon name>
                     .setTitle('Shiny ' + rows[0].name)
+                    .addField('Type', types)
                     // link to the generated shiny image
                     .setImage(shinyImageLink);
                 // send the message
