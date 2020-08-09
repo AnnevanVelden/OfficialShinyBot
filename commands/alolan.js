@@ -2,8 +2,8 @@ const discord = require('discord.js');
 const mysql = require('mysql');
 const botConfig = require('../botconfig.json');
 
-// if the command is random
-module.exports.run = async (bot, message, args, prefix) => {
+// if the command is -alolan
+module.exports.run = async (client, message, args, prefix) => {
     // make a connection to the database with all the pokemon data in it
     var con = mysql.createConnection({
         host: botConfig.host,
@@ -82,7 +82,7 @@ module.exports.run = async (bot, message, args, prefix) => {
 
 
         // generate the first rich embed
-        const botEmbed1 = new discord.RichEmbed()
+        const botEmbed1 = new discord.MessageEmbed()
             // set the color to yellow
             .setColor('#ffd117')
             // the title of the message is the name of the pokemon, this info is from the database
@@ -107,7 +107,7 @@ module.exports.run = async (bot, message, args, prefix) => {
         message.channel.send(botEmbed1);
 
         // make a second rich embed
-        const botEmbed2 = new discord.RichEmbed()
+        const botEmbed2 = new discord.MessageEmbed()
             // set the color to yellow
             .setColor('#ffd117')
             // the title is Normal <pokemon name>
@@ -118,7 +118,7 @@ module.exports.run = async (bot, message, args, prefix) => {
         message.channel.send(botEmbed2);
 
         // make a third embed
-        const botEmbed3 = new discord.RichEmbed()
+        const botEmbed3 = new discord.MessageEmbed()
             // set the color to yellow
             .setColor('#ffd117')
             // the title is Shiny <pokemon name>

@@ -1,20 +1,25 @@
 {
-  "name": "pokebot",
+  "name": "shinybot",
   "version": "1.0.0",
-  "description": "pokemon shiny bot",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Anne",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnnevanVelden/OfficialShinyBot.git"
+  },
+  "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnnevanVelden/OfficialShinyBot/issues"
+  },
+  "homepage": "https://github.com/AnnevanVelden/OfficialShinyBot#readme",
   "dependencies": {
     "discord-bot-analytics": "^1.0.14",
-    "discord.js": "^11.6.4",
+    "discord.js": "^12.2.0",
+    "fs": "0.0.1-security",
     "mysql": "^2.18.1"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.4"
   }
 }
