@@ -1,10 +1,11 @@
 const discord = require("discord.js");
 const botConfig = require('./botconfig.json');
 const fs = require('fs');
-const client = new discord.Client();
-
-const cheweyBotAnalyticsAPI = require("discord-bot-analytics");
-const customAnalytics = new cheweyBotAnalyticsAPI(botConfig.trackingToken, client);
+const client = new discord.Client({
+    ws: {
+        intents: ["GUILDS", "GUILD_MESSAGES", "GUILD_WEBHOOKS"]
+    }
+});
 
 client.commands = new discord.Collection();
 
