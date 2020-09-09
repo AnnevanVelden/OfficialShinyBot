@@ -176,6 +176,9 @@ module.exports.run = async (client, message, args, prefix) => {
                     lookUp(pokemonid);
                 });
                 break;
+            default:
+                return message.channel.send('Combination not found.');
+
         }
     } else if (arg.length == 2) {
         switch (argument) {
@@ -372,7 +375,7 @@ module.exports.run = async (client, message, args, prefix) => {
     function lookUp(pokemonid) {
         // do a quick query, select everything from the table named pokemon where the id is the same as the random
         // number that was just generated above
-        con.query(`SELECT * FROM pokemon WHERE id = ?`, [pokemonid], function (err, rows) {
+        con.query(`SELECT * FROM pokemon WHERE dex = ?`, [pokemonid], function (err, rows) {
             // if there is a error, throw it my way
             if (err) {
                 throw err;
@@ -448,8 +451,7 @@ module.exports.run = async (client, message, args, prefix) => {
                 // send the message
                 message.channel.send(botEmbed3);
             } else {
-                // the generated number does not match the database so no pokemon could be found
-                return message.channel.send();
+                return message.channel.send('No pokémon found.');
             }
         });
     }
