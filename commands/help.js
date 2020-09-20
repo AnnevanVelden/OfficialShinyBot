@@ -12,6 +12,19 @@ module.exports.run = async (client, message, args, prefix) => {
         .setThumbnail('https://shinybot.dev/public/assets/icon.png')
         // explanation of the different commands
         .addField(
+            prefix + 'help',
+            "Get some basic information of the bot."
+        )
+        .addField(
+            prefix + 'commands',
+            "A list of any and all possible base commands."
+        )
+        .addField(
+            prefix + 'error <explanation>',
+            "If there is an error please use this command and explain what is wrong."
+        )
+        .addField('\u200B', '\u200B')
+        .addField(
             prefix + 'shiny <pokémon> or ' + prefix + 'shiny <national pokédex number>',
             "Get some info relevant to shiny hunting of a specific pokémon. WARNING: IF THE MON HAS A SPACE IN THE NAME DON'T PUT IT IN THERE (for instance: Type: Null would be Type:Null). \nAlso, Nidoran is NidoranF and NidoranM and Urshifu is UrshifuRS or UrshifuSS."
         )
