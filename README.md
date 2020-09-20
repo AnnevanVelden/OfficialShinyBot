@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://www.shinybot.dev/public/assets/icon.png" height="250px">
+    <img src="https://www.shinybot.dev/public/assets/icon.png" height="150px">
 </p>
 <h1 align="center">Official ShinyBot</h1>
 
