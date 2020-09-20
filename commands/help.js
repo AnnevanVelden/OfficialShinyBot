@@ -13,7 +13,7 @@ module.exports.run = async (client, message, args, prefix) => {
         // explanation of the different commands
         .addField(
             prefix + 'shiny <pokémon> or ' + prefix + 'shiny <national pokédex number>',
-            "Get some info relevant to shiny hunting of a specific pokémon. WARNING: IF THE MON HAS A SPACE IN THE NAME DON'T PUT IT IN THERE (for instance: Type Null would be TypeNull). \nAlso, Nidoran is NidoranF and NidoranM and Urshifu is UrshifuRS or UrshifuSS."
+            "Get some info relevant to shiny hunting of a specific pokémon. WARNING: IF THE MON HAS A SPACE IN THE NAME DON'T PUT IT IN THERE (for instance: Type: Null would be Type:Null). \nAlso, Nidoran is NidoranF and NidoranM and Urshifu is UrshifuRS or UrshifuSS."
         )
         .addField('\u200B', '\u200B')
         .addField(prefix + 'random', 'Get a random pokémon')

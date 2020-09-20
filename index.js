@@ -7,6 +7,9 @@ const client = new discord.Client({
     }
 });
 
+const cheweyBotAnalyticsAPI = require("discord-bot-analytics")
+const customAnalytics = new cheweyBotAnalyticsAPI(botConfig.trackingToken, client)
+
 client.commands = new discord.Collection();
 
 // read the folder nammed commands
