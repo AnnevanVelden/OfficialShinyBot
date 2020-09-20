@@ -118,7 +118,8 @@ module.exports.run = async (client, message, args, prefix) => {
             .addField(
                 `Image credit:`,
                 `https://www.pkparaiso.com/, https://twitter.com/tilabletoast and https://projectpokemon.org/`
-            );
+            )
+            .setFooter('Made by Goose, also know as GooseIsLord. You can find me almost everywhere with those aliases.');
         // send the message
         message.channel.send(botEmbed1);
 

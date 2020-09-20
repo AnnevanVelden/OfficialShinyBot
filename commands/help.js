@@ -55,7 +55,8 @@ module.exports.run = async (client, message, args, prefix) => {
         )
         .addField('\u200B', '\u200B')
         .addField(prefix + 'invite', 'Get an invite link so you can invite the bot to your own server.')
-        .addField('website', 'The ShinyBot now also has a website. Go to https://www.shinybot.dev to see it.');
+        .addField('website', 'The ShinyBot now also has a website. Go to https://www.shinybot.dev to see it.')
+        .setFooter('Made by Goose, also know as GooseIsLord. You can find me almost everywhere with those aliases.');
     return message.channel.send(botEmbed);
 };
 

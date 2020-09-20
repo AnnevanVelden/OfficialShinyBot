@@ -1,0 +1,1 @@
+<img src="https://www.shinybot.dev/public/assets/icon.png" style="text-align:center; border-radius: 100%; height: 300px">
