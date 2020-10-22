@@ -367,7 +367,7 @@ module.exports.run = async (client, message, args, prefix) => {
         }
     } else {
         // generate a random number between 0 and 891 (so 1 to 890 can be picked)
-        var pokemonid = Math.floor(Math.random() * 893);
+        var pokemonid = Math.floor(Math.random() * 896);
 
         lookUp(pokemonid);
     }
