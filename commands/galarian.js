@@ -81,8 +81,8 @@ module.exports.run = async (client, message, args, prefix) => {
         var normalImageLink = 'https://shinybot.dev/public/sprites/regular/' + rows.dex + '_galarian.gif';
 
 
-        var type1 = rows.galarianType1;
-        var type2 = rows.galarianType2;
+        var type1 = rows.galarian_type1;
+        var type2 = rows.galarian_type2;
 
         if (type1 === type2){
             var types = type1;
